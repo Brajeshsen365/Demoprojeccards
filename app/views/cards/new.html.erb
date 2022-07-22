@@ -1,0 +1,35 @@
+<h1>Cards#new</h1>
+<p>Find me in app/views/cards/new.html.erb</p>
+
+<%= form_with model: @card do |form| %>
+  <div>
+    <%= form.label :Username %><br>
+    <%= form.text_field :username %>
+  </div><br />
+
+  <div>
+    <%= form.label :Account_no %><br>
+    <%= form.text_field :account_no %>
+  </div><br />
+
+  <div>
+    <%= form.label :Cvv %><br>
+    <%= form.text_field :cvv %>
+  </div><br />
+
+  <div>
+    <%= form.label :Valid_from %><br>
+    <%= form.date_field :valid_from %>
+  </div><br />
+
+  <div>
+    <%= form.label :Valid_to %><br>
+    <%= form.date_field :valid_to %>
+  </div><br />
+
+<%= form.select :status, ['Credit_card', 'Debit_card']%><br /><br />
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

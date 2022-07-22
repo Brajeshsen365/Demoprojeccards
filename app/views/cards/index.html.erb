@@ -1,0 +1,54 @@
+
+
+<%= link_to "New Card", new_card_path(@card)%><br />
+<pre>Credit Card  <%= Card.where(status: "Credit_card").count %> </pre>
+  <pre>Debit Card  <%= Card.where(status: "Debit_card").count %></pre>
+
+  <Strong> Total Cars <%= Card.count %> </Strong> 
+
+<strong><%= pie_chart Card.group(:status).count %></strong><br />
+
+
+     
+ <table id="cards-datatable" data-source="<%= cards_path(status: params[:status],format: :json) %>">
+
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Account_no</th>
+      <th>Cvv</th>
+      <th>Vali_from</th>
+      <th>Vali_to</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<script>
+  jQuery(document).ready(function() {
+  $('#cards-datatable').dataTable({
+    "processing": true,
+    "serverSide": true,
+    "ajax": {
+      "url": $('#cards-datatable').data('source')
+    },
+    "pagingType": "full_numbers",
+    "columns": [
+      {"data": "username"},
+      {"data": "account_no"},
+      {"data": "cvv"},
+      {"data": "valid_from"},
+      {"data": "valid_to"},
+      {"data": "status"},
+    ]
+    // pagingType is optional, if you want full pagination controls.
+    // Check dataTables documentation to learn more about
+    // available options.
+  });
+});
+</script>
+
+<%#= line_chart Card.group_by_day(:status).count %>
+<%#= column_chart Card.group_by_day_of_week(:status, format: "%a").count %>

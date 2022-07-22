@@ -1,0 +1,15 @@
+<h2>Cards#show</h2>
+<p>Find me in app/views/cards/show.html.erb</p>
+
+<h3><%= @card.username %></h3>
+
+<p><%= @card.account_no%></p>
+
+<p><%= @card.cvv%></p>
+
+<p><%= @card.valid_from%></p>
+
+<p><%= @card.valid_to%></p>
+
+
+<%= link_to "Bills", card_bills_path(@card) %>

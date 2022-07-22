@@ -1,0 +1,39 @@
+<h1>Bills#new</h1>
+
+
+<%= form_with model: @bill, url: card_bills_path, local: true do |form| %>
+
+  <div>
+    <%= form.label :Username %><br>
+    <%= form.text_field :username %>
+  </div><br />
+
+  <div>
+    <%= form.label :Account_no %><br>
+    <%= form.text_field :account_no %>
+  </div><br />
+
+  <div>
+    <%= form.label :Cvv %><br>
+    <%= form.text_field :cvv %>
+  </div><br />
+
+  <div>
+    <%= form.label :Valid_from %><br>
+    <%= form.date_field :valid_from %>
+  </div><br />
+
+  <div>
+    <%= form.label :Valid_to %><br>
+    <%= form.date_field :valid_to %>
+  </div><br />
+
+  <div>
+    <%= form.label :amount %><br>
+    <%= form.text_field :amount %>
+  </div><br />
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

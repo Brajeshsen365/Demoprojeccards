@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  account_no: 1
+  cvv: 1
+  valid_from: 2022-07-13 17:38:23
+  valid_to: 2022-07-13 17:38:23
+  amount: 1
+
+two:
+  username: MyString
+  account_no: 1
+  cvv: 1
+  valid_from: 2022-07-13 17:38:23
+  valid_to: 2022-07-13 17:38:23
+  amount: 1

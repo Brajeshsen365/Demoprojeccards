@@ -1,0 +1,105 @@
+
+
+
+<h1>Bills index</h1> 
+
+<strong><%= link_to "Bills", new_card_bill_path(@card) %></strong> <br /> 
+
+<table id="bills-datatable" data-source="<%= card_bills_path(format: :json) %>"><br />
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Account_no</th>
+      <th>Cvv</th>
+      <th>Vali_from</th>
+      <th>Vali_to</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+
+<script>
+  jQuery(document).ready(function() {
+  $('#bills-datatable').dataTable({
+    "processing": true,
+    "serverSide": true,
+    "ajax": {
+      "url": $('#bills-datatable').data('source')
+    },
+    "pagingType": "full_numbers",
+    "columns": [
+      {"data": "username"},
+      {"data": "account_no"},
+      {"data": "cvv"},
+      {"data": "valid_from"},
+      {"data": "valid_to"},
+      {"data": "amount"},
+    ]
+    // pagingType is optional, if you want full pagination controls.
+    // Check dataTables documentation to learn more about
+    // available options.
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

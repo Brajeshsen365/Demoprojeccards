@@ -1,0 +1,19 @@
+
+
+ <h4><%= link_to "Credit Card", cards_path(status: "Credit_card") %></h4>
+      <%= Card.where(status: "Credit_card").count %>
+
+ <h4><%= link_to "Debit Card", cards_path(status: "Debit_card") %></h4>
+      <%= Card.where(status: "Debit_card").count %>
+
+<table border="2">
+	<tr>
+		<th>Emails</th>
+	</tr>
+
+	<% @users.each do |user|%>
+		<tr>
+		   <td><%= user.email%></td>
+		</tr>
+	<%end%>
+</table>

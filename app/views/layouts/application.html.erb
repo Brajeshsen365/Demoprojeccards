@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demoprojeccards</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.scss" >
+
+<% stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+
+  <link rel= "stylesheet" href= "https://cdn.datatables.net/autofill/2.4.0/css/autoFill.dataTables.min.scss" >  
+
+  <link rel= "javascript" href = "https://cdn.datatables.net/autofill/2.4.0/js/dataTables.autoFill.min.js" >
+  </head>
+
+  <body>
+    <% if current_user %>
+  <strong><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></strong>
+  <strong><%= link_to "Edit Account", edit_user_registration_path  %></strong>
+
+  <%= image_tag(current_user.avatar_thumbnail, class: "w3-circle") %>
+<% else %>
+  <strong><%= link_to "create Account", new_user_registration_path  %></strong>
+  <strong><%= link_to "create Account", new_user_session_path  %></strong><br />
+<% end %>
+    <%= yield %>
+  </body>
+</html>
